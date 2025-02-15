@@ -14,11 +14,11 @@ st.title("Vehicle One Year Resale Value Predictor")
 
 # input widget for getting user value for X (feature matrix value)
 price= st.slider("Price[thousand dollars]",min_value=0, max_value=100,value=20)
-price= st.slider("Horsepower",min_value=0, max_value=100,value=20)
-price= st.slider("Engine_size",min_value=0, max_value=100,value=20)
+horsepower= st.slider("Horsepower",min_value=0, max_value=100,value=20)
+eng_size= st.slider("Engine_size",min_value=0, max_value=100,value=20)
 
 # After selecting price, the user then submits the price value
 if st.button("Predict"):
   #take the price value, and format the value in the right way
-  prediction = model.predict([[price]])[0].round(2)
+  prediction = model.predict([[price, horsepower, eng_size]])[0].round(2)
   st.write("The predicted one year resale value of your vechile is",prediction,"thousand dollars")
