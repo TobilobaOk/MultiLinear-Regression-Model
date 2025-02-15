@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 
 # load the file that contain the model(model.pkl)
-with open("model.pkl","rb") as f:
+with open("model .pkl","rb") as f:
   model=pickle.load(f)
 
 #give the streamlit app page a title
